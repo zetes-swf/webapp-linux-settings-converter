@@ -5,50 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Azure Web App settings converter</title>
         <link rel="stylesheet" href="https://unpkg.com/chota@latest">
-        <style>
-            .settings-header {
-                text-align: center;
-                margin-bottom: 10px;
-                font-size: 18px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .icon-windows {
-                width: 32px;
-                height: 32px;
-                margin-right: 8px;
-                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%230078d4"><path d="M3 12V6.75L9 5.43V11.91L3 12ZM3 13L9 13.09V19.57L3 18.25V13ZM10 5.26L21 3V11.83L10 12V5.26ZM21 13.17L10 13.09V20.74L21 21V13.17Z"/></svg>') center/contain no-repeat;
-            }
-            .icon-linux {
-                width: 32px;
-                height: 32px;
-                margin-right: 8px;
-                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.050 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602.006.199.08.4.226.552.146.149.354.198.571.207.267.011.697-.238.854-.46.196-.278.177-.6.069-.936-.108-.336-.45-.924-.45-.924s.18.632.308 1.507c.127.875.458 1.791.693 2.724.235.933.372 1.85.741 2.682.369.832.81 1.902 1.414 2.102.5.165 1.201-.154 1.698-.831.497-.677.815-1.611.815-1.611s.509.757 1.416.831c.907.074 1.842-.831 1.842-.831s.179.6.896 1.434c.717.834 1.513 1.207 2.308.844.795-.363 1.472-.803 1.472-2.156 0-1.354.184-2.75.184-2.75s.414.179.69.5c.276.321.552.643.828.964.276.321.621.482.966.482.345 0 .621-.161.897-.482.276-.321.552-.643.828-.964.276-.321.69-.5.69-.5s.184 1.396.184 2.75c0 1.353.677 1.793 1.472 2.156.795.363 1.591-.01 2.308-.844.717-.834.896-1.434.896-1.434s.935.905 1.842.831c.907-.074 1.416-.831 1.416-.831s.318.934.815 1.611c.497.677 1.198.996 1.698.831.604-.2 1.045-1.27 1.414-2.102.369-.832.506-1.749.741-2.682.235-.933.566-1.849.693-2.724.128-.875.308-1.507.308-1.507s-.342.588-.45.924c-.108.336-.127.658.069.936.157.222.587.471.854.46.217-.009.425-.058.571-.207.146-.152.22-.353.226-.552.004-.208-.042-.413-.132-.602-.206-.411-.551-.544-.864-.68-.312-.133-.598-.201-.797-.4-.213-.239-.403-.571-.663-.839a.424.424 0 00-.11-.135c.123-.805-.009-1.657-.287-2.489-.589-1.771-1.831-3.47-2.716-4.521-.75-1.067-.974-1.928-1.05-3.02-.065-1.491 1.056-5.965-3.17-6.298-.165-.013-.325-.021-.48-.021z"/></svg>') center/contain no-repeat;
-            }
-            .converter-arrow {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10;
-                background: white;
-                padding: 12px;
-                border-radius: 50%;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                border: 2px solid #e0e0e0;
-                width: 48px;
-                height: 48px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .icon-arrow {
-                width: 24px;
-                height: 24px;
-                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666666"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>') center/contain no-repeat;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="container">
