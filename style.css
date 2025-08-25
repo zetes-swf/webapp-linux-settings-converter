@@ -44,3 +44,23 @@
     height: 24px;
     background: url('https://icongr.am/fontawesome/arrow-right.svg?color=666666') center/contain no-repeat;
 }
+
+.copy-button {
+    background: none;
+    border: none;
+    margin-left: 8px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #f0f0f0;
+}
+
+.icon-copy {
+    width: 20px;
+    height: 20px;
+    background: url('https://icongr.am/fontawesome/copy.svg?color=666666') center/contain no-repeat;
+}

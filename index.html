@@ -33,6 +33,9 @@
                     <div class="settings-header">
                         <div class="icon-linux"></div>
                         Linux Settings
+                        <button id="copy-btn" class="copy-button" title="Copy to clipboard">
+                            <div class="icon-copy"></div>
+                        </button>
                     </div>
                      <textarea id="dest"
                         style="height:80vh; resize:none;"></textarea>
@@ -41,6 +44,7 @@
                 <script>
                     const origin = document.getElementById('origin');
                     const destination = document.getElementById('dest');
+                    const copyBtn = document.getElementById('copy-btn');
 
                     origin.addEventListener('input', () => {
                     const text = origin.value;
@@ -60,6 +64,37 @@
                         }
                         );
                         destination.value = replaced;
+                    });
+
+                    // Copy button functionality
+                    copyBtn.addEventListener('click', async () => {
+                        try {
+                            await navigator.clipboard.writeText(destination.value);
+                            
+                            // Visual feedback
+                            const originalTitle = copyBtn.title;
+                            copyBtn.title = 'Copied!';
+                            copyBtn.style.backgroundColor = '#4CAF50';
+                            
+                            setTimeout(() => {
+                                copyBtn.title = originalTitle;
+                                copyBtn.style.backgroundColor = '';
+                            }, 1000);
+                        } catch (err) {
+                            // Fallback for older browsers
+                            destination.select();
+                            document.execCommand('copy');
+                            
+                            // Visual feedback
+                            const originalTitle = copyBtn.title;
+                            copyBtn.title = 'Copied!';
+                            copyBtn.style.backgroundColor = '#4CAF50';
+                            
+                            setTimeout(() => {
+                                copyBtn.title = originalTitle;
+                                copyBtn.style.backgroundColor = '';
+                            }, 1000);
+                        }
                     });
 
                 </script>
