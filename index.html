@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Azure Web App settings converter</title>
+        <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Azure Web App application settings converter</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <textarea id="origin"
+                        style="height:85vh; resize:none;"></textarea>
+                </div>
+                <div class="col">
+                     <textarea id="dest"
+                        style="height:85vh; resize:none;"></textarea>
+                </div>
+
+                <script>
+                    const origin = document.getElementById('origin');
+                    const destination = document.getElementById('dest');
+
+                    origin.addEventListener('input', () => {
+                    const text = origin.value;
+                    const replaced = text.replace(
+                        /("name"\s*:\s*")((?:[^"\\]|\\.)*)(")/g,
+                        (match, p1, p2, p3) => {
+                            const unescaped = p2.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+
+                            // Replace ':' with '__' inside unescaped string
+                            const replacedInside = unescaped.replace(/:/g, '__');
+
+                            const escaped = replacedInside
+                            .replace(/\\/g, '\\\\')
+                            .replace(/"/g, '\\"');
+
+                            return p1 + escaped + p3;
+                        }
+                        );
+                        destination.value = replaced;
+                    });
+
+                </script>
+            </div>
+
+        </div>
+
+    </body>
+</html>
+
