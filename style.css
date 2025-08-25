@@ -1,0 +1,46 @@
+.settings-header {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-windows {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background: url('https://icongr.am/fontawesome/windows.svg?color=0078d4') center/contain no-repeat;
+}
+
+.icon-linux {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background: url('https://icongr.am/fontawesome/linux.svg?color=000000') center/contain no-repeat;
+}
+
+.converter-arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: white;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 2px solid #e0e0e0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-arrow {
+    width: 24px;
+    height: 24px;
+    background: url('https://icongr.am/fontawesome/arrow-right.svg?color=666666') center/contain no-repeat;
+}

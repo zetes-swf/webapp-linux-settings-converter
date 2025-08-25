@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Azure Web App settings converter</title>
         <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="container">
@@ -13,14 +14,28 @@
                     <h2>Azure Web App application settings converter</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="position: relative;">
                 <div class="col">
+                    <div class="settings-header">
+                        <div class="icon-windows"></div>
+                        Windows Settings
+                    </div>
                     <textarea id="origin"
-                        style="height:85vh; resize:none;"></textarea>
+                        style="height:80vh; resize:none;"></textarea>
                 </div>
+                
+                <!-- Arrow between textareas -->
+                <div class="converter-arrow">
+                    <div class="icon-arrow"></div>
+                </div>
+                
                 <div class="col">
+                    <div class="settings-header">
+                        <div class="icon-linux"></div>
+                        Linux Settings
+                    </div>
                      <textarea id="dest"
-                        style="height:85vh; resize:none;"></textarea>
+                        style="height:80vh; resize:none;"></textarea>
                 </div>
 
                 <script>
